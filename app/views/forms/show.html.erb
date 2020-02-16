@@ -1,0 +1,43 @@
+<div class="answer">
+  <div class="answer-child">
+  </div>
+</div>
+
+<% @forms.each do |form| %>
+  <%= form.item %>
+  <%= form.isbought %>
+  <%= form.other %>
+  <% if form.catalog  == 1%>
+    <span>〇</span>
+  <%else%>
+    <span>×</span>
+  <%end%>
+  <%= form.furigana %>
+  <%= form.name %>
+  <%= form.gender %>
+  <%= form.age%>
+  <%= form.postnumber %>
+  <%= form.address %>
+  <%= form.tel %>
+  <%= form.mail %>
+  <% if form.bake == 1%>
+    <span>〇</span>
+  <%else%>
+    <span>×</span>
+  <%end%>
+  <% if form.cheese3 == 1%>
+    <span>〇</span>
+  <%else%>
+    <span>×</span>
+  <%end%>
+  <% if form.cheese6 == 1%>
+    <span>〇</span>
+  <%else%>
+    <span>×</span>
+  <%end%>
+  <%= form.satisfied%>
+  <br>
+<% end %>
+<%= link_to "トップページ", root_path%>
+<%= link_to "Excel出力", form_path(@forms, format: :xlsx) %>
+

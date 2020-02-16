@@ -1,0 +1,123 @@
+
+<div class="main">
+  <div class="top-text">
+    <span>この度は、株式会社　ヤマゲンの商品をご賞味いただき</span>
+    <br>
+    <span>誠にありがとうございます。</span>
+    <br>
+    <span>当店では、皆様からの色々なご意見をお聞かせいただき、さらに</span>
+    <br>
+    <span>今後の商品づくりへ役立てていきたいと考えております。</span>
+    <br>
+    <span>つきましては、お気づきの点やご意見、アイデア、サービス等に</span>
+    <br>
+    <span>ついて何なりとご記入の上、ご投稿よろしくお願いいたします。</span>
+  </div>
+  <br>
+
+
+  <div class="question">
+    <%= form_for @forms do |f| %>
+      <div class="questionBlock">
+        <span>●この度ご賞味いただいた商品名の全てにチェックをお入れください</span>
+        <br>
+          <div class="area">
+            <span>・ベイクドチーズケーキ</span>
+              <%= f.check_box(:bake, {}, checked_value = 1, unchecked = 0)%>
+            <br>
+            <span>・チーズケーキ3個入り</span>
+              <%= f.check_box(:cheese3, {}, checked_value = 1, unchecked = 0)%>
+            <br>
+            <span>・チーズケーキ6個入り</span>
+              <%= f.check_box(:cheese6, {}, checked_value = 1, unchecked = 0)%>
+            <br>
+            <span>・その他</span>
+              <%= f.text_field :item %>
+          </div>
+      </div>
+      <br>
+
+      <div class="questionBlock">
+        <span>●上記にご記入いただいた商品について</span>
+        <br>
+        <span>(右のいずれかにチェックをお入れください)</span>
+        <%= f.radio_button :isbought, 1 %>
+          <span>ご購入品</span>
+        <%= f.radio_button :isbought, 2 %>
+          <span>いただき物</span>
+      </div>
+      <br>
+
+      <div class="questionBlock">
+        <span>●満足度を10段階でご入力ください</span>
+        <br>
+        <span>10→とても満足した　1→全く満足できなかった</span>
+        <%= f.number_field :satisfied, min: 1, max: 10 %>
+      </div>
+      <br>
+
+      <div class="questionBlock">
+        <span>●その他ご意見</span>
+        <br>
+        <%= f.text_field :other %>
+      </div>
+      <br>
+
+      <div class="questionBlock">
+        <span>◆◆◆◆通信販売も承っております◆◆◆◆</span>
+        <br>
+        <span>ご希望の方にはカタログをお送りします。</span>
+        <br>
+        <span>カタログを希望の方はチェックをお入れください</span>
+        <%= f.check_box(:catalog, {}, checked_value = 1, unchecked = 0)%>
+        <br>
+        <span>◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆</span>
+      </div>
+      <br>
+
+      <div class="questionPersol">
+
+        <div class="up">
+          <div class="name">
+            <span>フリガナ:</span>
+              <%= f.text_field :furigana %>
+              <br>
+            <span>お名前:　</span>
+              <%= f.text_field :name %>
+          </div>
+          <div class="age-gender">
+            <span>性別：</span>
+              <%= f.select :gender , ["","男性","女性","その他"]%>
+              <br>
+            <span>年齢：</span>
+              <%= f.number_field :age, min: 0, max: 100 %>
+            <span>才</span>
+          </div>
+        </div>
+
+        <div class="middle">
+          <span>郵便番号：</span>
+            <%= f.text_field :postnumber %>
+            <br>
+          <span>ご住所：　</span>
+            <%= f.text_area :address %>
+        </div>
+        <br>
+
+        <div class="low">
+          <span>Tel：</span>
+            <%= f.text_field :tel %>
+          <span>e-mail：</span>
+            <%= f.email_field :mail %>
+        </div>
+        
+      </div>
+
+      <div class="questionBlock">
+        <%= f.submit '送信する'%>
+      </div>
+    <% end %>
+  </div>
+
+  
+</div>
