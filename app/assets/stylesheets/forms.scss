@@ -9,6 +9,16 @@ body{
   margin: 0 auto;
   width: 800px;
   height: 1300px;
+  input[type = checkbox]
+  {
+    width: 20px;
+    height: 20px;
+  }
+  input[type = radio]
+  {
+    width: 20px;
+    height: 20px;
+  }
   .top-text
   {
     margin: 0 auto;
@@ -53,9 +63,24 @@ body{
           margin-top: 15px;
         }
       }
-      .low
-      {
-      }
+    }
+    .sendButton{
+      margin-top: 100px;
+      text-align: center;
+      font-size: 30px;
     }
   }
+  animation-name:fadein;
+      animation-duration: 4s;
+      font-family: 'Limelight', cursive;
+    }
+    @keyframes fadein {
+      from{
+          opacity: 0;
+          transform: translateX(20px);
+      }
+      to{
+        opacity: 1;
+        transform: translatX(0);
+      }
 }

@@ -3,39 +3,13 @@
   </div>
 </div>
 
-<% @results.each do |result| %>
-  <% if result.bake == 1%>
-    <span>ベイクドチーズケーキ：〇</span>
-  <%else%>
-    <span>ベイクドチーズケーキ：×</span>
-  <%end%>
-  <% if result.cheese3 == 1%>
-    <span>チーズケーキ（3個入り):〇</span>
-  <%else%>
-    <span>チーズケーキ（3個入り):×</span>
-  <%end%>
-  <% if result.cheese6 == 1%>
-    <span>チーズケーキ（6個入り):〇</span>
-  <%else%>
-    <span>チーズケーキ（6個入り):×</span>
-  <%end%>
-  <% if result.catalog  == 1%>
-    <span>カタログ：〇</span>
-  <%else%>
-    <span>カタログ：×</span>
-  <%end%>
-  <%= result.furigana %>
-  <%= result.name %>
-  <%= result.gender %>
-  <%= result.age%>
-  <%= result.postnumber %>
-  <%= result.address %>
-  <%= result.tel %>
-  <%= result.mail %>
-  
-  <%= result.satisfied%>
-  <br>
-<% end %>
+<%# <% @results.each do |result| %>
+  <%# <% if result.bake == 1%>
+    <%# <span>ベイクドチーズケーキ：〇</span> %>
+  <%# <%else%> 
+    <%# <span>ベイクドチーズケーキ：×</span> %>
+  <%# <br> %>
+<%# <% end %> 
 <%= link_to "トップページ", root_path%>
 <%= link_to "Excel出力", result_path(@results, format: :xlsx) %>
 
